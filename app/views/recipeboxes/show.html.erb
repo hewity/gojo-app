@@ -1,0 +1,23 @@
+<p>
+  <h1><%= @recipebox.name %></h1>
+</p>
+<div class="row">
+  <div class="col-md-4 pull-right center">
+    <%= gravatar_for @recipebox.user, size: 200 %>
+    <p>
+      <h5>Brought to you by: <%= @recipebox.user.username %></h5>
+    </p>
+  </div>
+  <div class="col-md-8">
+    <h3><%= @recipebox.summary %></h3>
+    <div class="will">
+      <p>
+        <strong>Steps:</strong>
+      </p>
+      <%= @recipebox.description %>
+
+    </div>
+  </div>
+</div>
+
+<h5><%= link_to "Return to all Recipes", recipeboxes_path, class: "btn btn-success btn-small" %></h5>
