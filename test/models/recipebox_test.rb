@@ -3,7 +3,7 @@ require 'test_helper'
 class RecipeboxTest < ActiveSupport::TestCase
   def setup
     @user = User.create(username: "lelu", email: "lelu@example.com")
-    @recipebox = @user.recipeboxes.build(name: "Mexican Grilled Corn", summary: "The best home made grilled corn recipe ever.", description: "Remove the husks of the corn but leave the core attached at the end so you have something to hold onto. Grill the corn on a hot grill or cast iron griddle pan until slightly charred. Turn it so it gets cooked evenly all over. Mix the mayonnaise, sour cream and cilantro together. Grate the Parmesan in another bowl. While the corn is still warm slather with mayonnaise mix. Squeeze lime juice over the corn and shower with Parmesan. Season with chili powder and serve with extra lime wedges.")
+    @recipebox = @user.recipeboxes.build(name: "Mexican Grilled Corn", summary: "The best home made grilled corn recipe ever.", description: "Remove the husks of the corn but leave the core attached at the end so you have something to hold onto. Grill the corn on a hot grill or cast iron griddle pan until slightly charred. Turn it so it gets cooked evenly all over. Mix the mayonnaise, sour cream and cilantro together. Grate the Parmesan in another bowl.")
   end
 
   test "recipebox should be valid" do
