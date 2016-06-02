@@ -24,6 +24,19 @@ class RecipeboxesController < ApplicationController
     end
   end
 
+  def edit
+    @recipebox = Recipebox.find(params[:id])
+  end
+  def update
+    @recipebox = Recipebox.find(params[:id])
+    if @recipebox.update(recipebox_params)
+      flash[:success] = "Recipe updated successfully!"
+      redirect_to recipebox_path(@recipebox)
+    else
+      render :edit
+
+  end
+end
   private
 
   def recipebox_params
