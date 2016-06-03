@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
+  resources :paperclip_images
+  resources :paperclip_images
   root 'pages#home'
 
 get '/home', to:'pages#home'
 
-resources :recipeboxes
+resources :recipeboxes do
+  member do
+    post 'like'
+    end
+  end
+
+  resources :user, except: [:new]
+
+  get 'register', to: 'users#new'
+
+
 # get     '/recipeboxes', to: 'recipeboxes#index'
 # get     '/recipeboxes', to: 'recipeboxes#new', as: 'new_recipebox'
 # post    '/recipeboxes', to: 'recipeboxes#create'

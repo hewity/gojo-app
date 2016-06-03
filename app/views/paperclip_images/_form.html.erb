@@ -1,0 +1,23 @@
+<%= form_for @paperclip_image, html: { multipart: true} do |f| %>
+  <% if @paperclip_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paperclip_image.errors.count, "error") %> prohibited this paperclip_image from being saved:</h2>
+
+      <ul>
+      <% @paperclip_image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form_for (@recipebox, html: { multipart: true }) do |form| %>
+    <%= f.label :avatar %><br>
+    <%= f.text_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

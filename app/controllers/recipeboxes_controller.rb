@@ -1,7 +1,7 @@
 class RecipeboxesController < ApplicationController
 
   def index
-    @recipeboxes = Recipebox.all
+    @recipeboxes = Recipebox.paginate(page: params[:page])
   end
 
   def show
@@ -37,10 +37,23 @@ class RecipeboxesController < ApplicationController
 
   end
 end
+
+def like
+   @recipebox = Recipebox.find(params[:id])
+   like = Like.create(like: params[:like], user: User.first, recipebox: @recipebox)
+   if like.valid?
+     flash[:success] = "Your selection was succesful"
+     redirect_to :back
+   else
+     flash[:danger] = "You can only like/dislike a recipe once"
+     redirect_to :back
+   end
+ end
+
   private
 
   def recipebox_params
-    params.require(:recipebox).permit(:name, :summary, :description)
+    params.require(:recipebox).permit(:name, :summary, :description, :paperclip_image)
   end
 
 end

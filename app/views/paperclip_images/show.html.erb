@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @paperclip_image.avatar %>
+</p>
+<%= image_tag @paperclip_images_path.avatar.url(:medium), class: "img-thumbnail" %>
+<%= link_to 'Edit', edit_paperclip_image_path(@paperclip_image) %> |
+<%= link_to 'Back', paperclip_images_path %>
