@@ -1,2 +1,3 @@
 module PaperclipImagesHelper
+  
 end

@@ -14,6 +14,14 @@ resources :recipeboxes do
   resources :user, except: [:new]
 
   get 'register', to: 'users#new'
+  # list of all users
+ # get 'users',          to: 'users#index',  as: :all_users
+
+ # single user
+ # get 'users/:id',      to: 'users#show',    as: :single_user
+
+ # edit user
+ # get 'users/:id/edit', to: 'users#edit',    as: :edit_user
 
 
 # get     '/recipeboxes', to: 'recipeboxes#index'

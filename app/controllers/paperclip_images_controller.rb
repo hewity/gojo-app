@@ -10,6 +10,7 @@ class PaperclipImagesController < ApplicationController
   # GET /paperclip_images/1
   # GET /paperclip_images/1.json
   def show
+    @paperclip_image = PaperclipImage.find(params[:id])
   end
 
   # GET /paperclip_images/new
@@ -19,6 +20,7 @@ class PaperclipImagesController < ApplicationController
 
   # GET /paperclip_images/1/edit
   def edit
+    @paperclip_image =PaperclipImage.find(params[:id])
   end
 
   # POST /paperclip_images

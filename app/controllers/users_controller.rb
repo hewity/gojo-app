@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       redirect_to recipebox_path
     else
       render 'new'
-
+    end
   end
 
   def edit
@@ -26,10 +26,10 @@ class UsersController < ApplicationController
       redirect_to recipebox_path
 
   end
-
+end
   private
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
-
+end
 end
